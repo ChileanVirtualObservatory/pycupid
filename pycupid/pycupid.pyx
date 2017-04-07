@@ -222,4 +222,4 @@ def _findclumps(method, data, variance, config, rms, velax=0, perspectrum=0):
 	else:
 		raise ValueError("Clumping method " + repr(method) + "is not defined")
 
-	return np.reshape(clumps, shape, order='F') if clumps else None
+	return np.reshape(clumps, shape, order='C') if clumps else None
