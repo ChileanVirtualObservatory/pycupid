@@ -88,7 +88,7 @@ extensions = [
         include_dirs = [os.path.join(WRAPPER_DIR, "star", "include"), 
                         os.path.join(CUPID_DIR, "include")],
         library_dirs = [os.path.join(WRAPPER_DIR, "star", "lib")],
-        extra_link_args = ["-Wl,-rpath=" + os.path.join("$ORIGIN", "star", "lib")],
+        extra_link_args = ["-Wl,-rpath," + os.path.join("$ORIGIN", "star", "lib")],
         libraries = [
             "ast", 
             "err_standalone", 
@@ -131,16 +131,14 @@ if USE_CYTHON:
 setup(
     name = 'pycupid',
     version = '0.1.0',
-    author = u'Manuel Sánchez',
-    author_email = 'manuel.sanchez@linux.com',
+    author = u'LIRAE TEAM',
+    author_email = 'consultas@lirae.cl',
     packages = ['pycupid'],
     package_data = {'pycupid': ['star/lib/*',]},
-    url = 'https://github.com/msanchezc/pycupid',
+    url = 'https://github.com/ChileanVirtualObservatory/pycupid',
     description = 'Python wrappers for Starlink\'s CUPID package',
     ext_modules = extensions,
-    cmdclass = {
-        'build_ext': custom_build_ext,
-    },
+    #cmdclass = { build_ext': custom_build_ext, },
     install_requires = {
         'numpy >= 1.11.2',
     }
