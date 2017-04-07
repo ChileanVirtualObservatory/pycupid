@@ -134,7 +134,6 @@ setup(
     author = u'LIRAE TEAM',
     author_email = 'consultas@lirae.cl',
     packages = ['pycupid'],
-    package_data = {'pycupid': ['star/lib/*',]},
     url = 'https://github.com/ChileanVirtualObservatory/pycupid',
     description = 'Python wrappers for Starlink\'s CUPID package',
     ext_modules = extensions,
