@@ -89,7 +89,8 @@ extensions = [
                         os.path.join(CUPID_DIR, "include")],
         library_dirs = [os.path.join(WRAPPER_DIR, "star", "lib")],
         extra_link_args = ["-Wl,-rpath," + os.path.join("$ORIGIN", "star", "lib")],
-        libraries = [
+        extra_compile_args = ["-std=c99"],
+	libraries = [
             "ast", 
             "err_standalone", 
             "hds", 
@@ -128,6 +129,34 @@ extensions = [
 if USE_CYTHON:
     extensions = cythonize(extensions)
 
+
+libs = ["libary.so*",
+	"libast_ems.so*",
+	"libast_err.so*",
+	"libast_grf_2.0.so*",
+	"libast_grf_3.2.so*",
+	"libast_grf3d.so*",
+	"libast_grf_5.6.so*",
+	"libast_pal.so*",
+	"libast.so*",
+	"libchr.so*",
+	"libcnf.so*",
+	"libemsf.so*",
+	"libems.so*",
+	"liberr_standalone.so*",
+	"libhdsf.so*",
+	"libhds.so*",
+	"libndf.so*",
+	"libpda.so*",
+	"libprm_a.so*",
+	"libprm.so*",
+	"libpsx.so*",
+	"libstarmem.so*",
+	"libstarutil.so*"]
+
+libs = [os.path.join("star","lib",lib) for lib in libs ]
+
+
 setup(
     name = 'pycupid',
     version = '0.1.0',
@@ -137,6 +166,7 @@ setup(
     url = 'https://github.com/ChileanVirtualObservatory/pycupid',
     description = 'Python wrappers for Starlink\'s CUPID package',
     ext_modules = extensions,
+    package_data = {'pycupid': libs},
     #cmdclass = { build_ext': custom_build_ext, },
     install_requires = {
         'numpy >= 1.11.2',
