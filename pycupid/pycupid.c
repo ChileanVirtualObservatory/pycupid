@@ -53,6 +53,8 @@
 }
 END: Cython Metadata */
 
+#include <math.h>
+
 #define PY_SSIZE_T_CLEAN
 #include "Python.h"
 #ifndef Py_PYTHON_H
