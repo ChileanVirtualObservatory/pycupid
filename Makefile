@@ -29,6 +29,7 @@ $(starlink_dir)/bin/cupid: buildsupport
 	$(MAKE) -C ./starlink configure-deps
 	cd ./starlink && ./configure -C --without-stardocs
 	$(MAKE) -C ./starlink $(starlink_dir)/manifests/cupid
+	strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag $(current_dir)/pycupid/star/lib/*.so
 
 .PHONY: clean
 clean:
