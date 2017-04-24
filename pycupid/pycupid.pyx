@@ -1,4 +1,5 @@
 import numpy as np
+import numpy.ma as ma
 cimport cupid
 from libc.stdio cimport printf
 from cpython.mem cimport PyMem_Malloc, PyMem_Free
@@ -167,12 +168,6 @@ def _findclumps(method, data, variance, config, rms, velax=0, perspectrum=0):
 	cdef:
 		cupid.AstKeyMap *aconfig = cupid.astKeyMap(" ")
 
-	# Variables used to test the ast library.
-	#cdef:
-	#	int int_value
-	#	double double_value
-	#	const char *string_value
-
 	if config:
 		for key, value in config.items():
 			key = bytes(key, "ascii")
@@ -186,30 +181,21 @@ def _findclumps(method, data, variance, config, rms, velax=0, perspectrum=0):
 				raise ValueError("Value for key " + repr(key.decode()) 
 								 + " should be of type int, float or str")
 
-	# Test AstKeyMap
-	# for key, value in config.items():
-	# 	key = bytes(key, "ascii")
-	# 	printf("%s: ", <char *> key)
-	# 	if type(value) is int:
-	# 		cupid.astMapGet0I(aconfig, key, &int_value)
-	# 		printf("%d\n", int_value)
-	# 	elif type(value) is float:
-	# 		cupid.astMapGet0D(aconfig, key, &double_value)
-	# 		printf("%g\n", double_value)
-	# 	elif type(value) is str:
-	# 		cupid.astMapGet0C(aconfig, key, &string_value)
-	# 		printf("%s\n", string_value)
-
 	shape = np.asarray(data.shape, dtype=np.int32)
 	ubound = shape - 1
-	data = data.flatten(order='F')
 	if variance:
 		if not np.array_equal(variance.shape, shape):
 			raise ValueError("""Variance array must have the same 
 								shape as data array""")
 		variance = variance.flatten(order='F')
 	else:
-		variance = np.zeros(data.size, dtype=np.double)	# For testing purposes only.
+		variance = np.zeros(data.size, dtype=np.float64)
+
+	if isinstance(data, ma.MaskedArray):
+		data = data.filled(fill_value=0) #maybe fill_value should be a parameter
+	if data.dtype != np.dtype('float64'):
+		data = data.astype(np.float64)
+	data = data.flatten(order='F')
 
 	if method == "GAUSSCLUMPS":
 		clumps = gc(data, variance, ubound, aconfig, rms, velax)
