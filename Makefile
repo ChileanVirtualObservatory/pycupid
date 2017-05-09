@@ -9,6 +9,23 @@ export PATH := $(starlink_dir)/bin:$(starlink_dir)/buildsupport/bin:$(PATH)
 export FC := gfortran
 export F77 := gfortran
 
+PYTHONS =2.7 3.4 3.5 3.6
+DIST =$(shell uname )
+
+ifeq ($(DIST), Linux)
+	PLATAFORM = manylinux1_x86_64
+else
+	PLATAFORM = macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64
+endif
+
+upload_wheels: build_wheels
+	twine upload dist/* 
+
+build_wheels: clean $(PYTHONS)
+
+$(PYTHONS): %:
+	./build_wheel.sh $@ $(PLATAFORM)
+
 all: buildcupid
 
 .PHONY: buildcupid
@@ -34,4 +51,5 @@ $(starlink_dir)/bin/cupid: buildsupport
 .PHONY: clean
 clean:
 	-rm -rf build/
+	-rm -rf dist/
 	-rm -f *.so
