@@ -15,7 +15,7 @@ DIST =$(shell uname )
 ifeq ($(DIST), Linux)
 	PLATAFORM = manylinux1_x86_64
 else
-	PLATAFORM = macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64
+	PLATAFORM = TMP
 endif
 
 upload_wheels: build_wheels
