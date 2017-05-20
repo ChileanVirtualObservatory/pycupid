@@ -94,3 +94,8 @@ ENV/
 
 # directories
 pycupid/star/
+
+# Sphinx files
+_build
+_static
+_templates
