@@ -7,6 +7,6 @@ Python Wrappers Functions to use the mean **clumping algorithms** in CUPID.
 
 Clumping Functions
 -------------------
-.. automodule:: pycupid
+.. automodule:: pycupid.pycupid
     :members:
 
