@@ -24,4 +24,5 @@ build:
 	cd .. && make clean && python setup.py clean && python setup.py build && cp build/*/*/*.so pycupid && cd docs
 
 clear:
+	rm -rf _build
 	rm -rf static_build

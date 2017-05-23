@@ -150,12 +150,16 @@ cdef int[::1] fw(double[::1] data, double[::1] variance,
 
 def gaussclumps(data, rms, config=None, variance=None, velax=0):
     """
+    Gauss Clump Algorithm
+    
     Parameters
     ----------
-
+    data: numpy.array
+          Image
 
     Returns
     -------
+    numpy.array
     """
     clumps = _findclumps("GAUSSCLUMPS", data, variance, config, rms, velax)
     return clumps
