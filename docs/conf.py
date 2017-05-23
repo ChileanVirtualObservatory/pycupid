@@ -168,3 +168,10 @@ texinfo_documents = [
 
 
 
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+html_extra_path = []
+if on_rtd:
+    # on RTD, we just overwrite the built documentation with the content of static_build :)
+    print("RTD: configuring html_extra_path")
+    html_extra_path.append('static_build/html')
+
