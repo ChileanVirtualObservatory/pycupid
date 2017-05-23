@@ -18,7 +18,7 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: clear build Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	mkdir static_build && mv _build/html/* static_build 
+	mkdir static_build && mv _build/* static_build 
 
 build:
 	cd .. && make clean && python setup.py clean && python setup.py build && cp build/*/*/*.so pycupid && cd docs
