@@ -24,7 +24,7 @@ Contents
    :caption: Contents:
 
    pycupid
-
+   pycupid_usage
 
 Installation
 ============
