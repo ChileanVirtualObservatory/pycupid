@@ -150,49 +150,124 @@ cdef int[::1] fw(double[::1] data, double[::1] variance,
 
 def gaussclumps(data, rms, config=None, variance=None, velax=0):
     """
-    Gauss Clump Algorithm
+    Gauss Clumping Algorithm
     
     Parameters
     ----------
     data: numpy.array
-          Image
+        Input data with the 2 or 3 dimensional image to analyze.
+
+    rms: float
+        Estimation of the RMS of noise in data. It is used to configure
+        other parameters of the algorithm.
+
+    config: dict (default=None)
+        Python dictionary containing the parameters of the algorithm:
+        config["PARAMETER_NAME"] = PARAMETER_VALUE. If set to None, 
+        then default values of the algorithm will be used. 
+
+    variance: float
+        Variance of the data.
+
+    velax: int
+        Integer value indicate which is the speed/frequency axis in the cube.
 
     Returns
     -------
-    numpy.array
+    numpy.array with integer values (numpy.int32) containing the Clump Assignment Array (CAA).
     """
     clumps = _findclumps("GAUSSCLUMPS", data, variance, config, rms, velax)
     return clumps
 
 def reinhold(data, rms, config=None, variance=None, velax=0):
     """
+    Reinhold Clumping Algorithm
+    
     Parameters
     ----------
+    data: numpy.array
+        Input data with the 2 or 3 dimensional image to analyze.
+
+    rms: float
+        Estimation of the RMS of noise in data. It is used to configure
+        other parameters of the algorithm.
+
+    config: dict (default=None)
+        Python dictionary containing the parameters of the algorithm:
+        config["PARAMETER_NAME"] = PARAMETER_VALUE. If set to None, 
+        then default values of the algorithm will be used. 
+
+    variance: float
+        Variance of the data.
+
+    velax: int
+        Integer value indicate which is the speed/frequency axis in the cube.
 
     Returns
     -------
+    numpy.array with integer values (numpy.int32) containing the Clump Assignment Array (CAA).
     """
     clumps = _findclumps("REINHOLD", data, variance, config, rms, velax)
     return clumps
 
 def clumpfind(data, rms, config=None, variance=None, velax=0, perspectrum=0):
     """
+    Clumping Clumping Algorithm
+    
     Parameters
     ----------
+    data: numpy.array
+        Input data with the 2 or 3 dimensional image to analyze.
+
+    rms: float
+        Estimation of the RMS of noise in data. It is used to configure
+        other parameters of the algorithm.
+
+    config: dict (default=None)
+        Python dictionary containing the parameters of the algorithm:
+        config["PARAMETER_NAME"] = PARAMETER_VALUE. If set to None, 
+        then default values of the algorithm will be used. 
+
+    variance: float
+        Variance of the data.
+
+    velax: int
+        Integer value indicate which is the speed/frequency axis in the cube.
 
     Returns
     -------
+    numpy.array with integer values (numpy.int32) containing the Clump Assignment Array (CAA).
     """
     clumps = _findclumps("CLUMPFIND", data, variance, config, rms, velax, perspectrum)
     return clumps
 
 def fellwalker(data, rms, config=None, variance=None, velax=0, perspectrum=0):
     """
+    FellWalker Clumping Algorithm
+    
     Parameters
     ----------
+    data: numpy.array
+        Input data with the 2 or 3 dimensional image to analyze.
+
+    rms: float
+        Estimation of the RMS of noise in data. It is used to configure
+        other parameters of the algorithm.
+
+    config: dict (default=None)
+        Python dictionary containing the parameters of the algorithm:
+        config["PARAMETER_NAME"] = PARAMETER_VALUE. If set to None, 
+        then default values of the algorithm will be used. 
+
+    variance: float
+        Variance of the data.
+
+    velax: int
+        Integer value indicate which is the speed/frequency axis in the cube.
 
     Returns
     -------
+    numpy.array with integer values (numpy.int32) containing the Clump Assignment Array (CAA).
     """
     clumps = _findclumps("FELLWALKER", data, variance, config, rms, velax, perspectrum)
     return clumps
