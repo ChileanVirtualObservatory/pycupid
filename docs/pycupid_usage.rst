@@ -43,7 +43,7 @@ Usage of PyCupid Interfaces of Cupid's Clumping Algorithms
         return data
 
 Loading FITS data
-=================
+-----------------
 
 .. code:: python
 
@@ -51,7 +51,7 @@ Loading FITS data
     rms = estimate_rms(data)
 
 GaussClump
-==========
+----------
 
 .. code:: python
 
@@ -74,7 +74,7 @@ GaussClump
 
 
 ClumpFind
-=========
+---------
 
 .. code:: python
 
@@ -97,7 +97,7 @@ ClumpFind
 
 
 FellWalker
-==========
+----------
 
 .. code:: python
 
@@ -120,7 +120,7 @@ FellWalker
 
 
 Reinhold
-========
+--------
 
 .. code:: python
 

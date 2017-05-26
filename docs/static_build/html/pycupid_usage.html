@@ -92,12 +92,14 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="pycupid.html">PyCupid Core Wrappers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage of PyCupid Interfaces of Cupid&#8217;s Clumping Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#loading-fits-data">Loading FITS data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#gaussclump">GaussClump</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#clumpfind">ClumpFind</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#fellwalker">FellWalker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#reinhold">Reinhold</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage of PyCupid Interfaces of Cupid&#8217;s Clumping Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#loading-fits-data">Loading FITS data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gaussclump">GaussClump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clumpfind">ClumpFind</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fellwalker">FellWalker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reinhold">Reinhold</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -202,16 +204,15 @@
     <span class="k">return</span> <span class="n">data</span>
 </pre></div>
 </div>
-</div>
 <div class="section" id="loading-fits-data">
-<h1>Loading FITS data<a class="headerlink" href="#loading-fits-data" title="Permalink to this headline">¶</a></h1>
+<h2>Loading FITS data<a class="headerlink" href="#loading-fits-data" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s1">&#39;Orion.cont.image.fits&#39;</span><span class="p">)</span>
 <span class="n">rms</span> <span class="o">=</span> <span class="n">estimate_rms</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="gaussclump">
-<h1>GaussClump<a class="headerlink" href="#gaussclump" title="Permalink to this headline">¶</a></h1>
+<h2>GaussClump<a class="headerlink" href="#gaussclump" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">out_gc</span> <span class="o">=</span> <span class="n">gaussclumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">rms</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -227,7 +228,7 @@
 <img alt="_images/pycupid_usage_7_0.png" src="_images/pycupid_usage_7_0.png" />
 </div>
 <div class="section" id="clumpfind">
-<h1>ClumpFind<a class="headerlink" href="#clumpfind" title="Permalink to this headline">¶</a></h1>
+<h2>ClumpFind<a class="headerlink" href="#clumpfind" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">out_cf</span> <span class="o">=</span> <span class="n">clumpfind</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">rms</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -243,7 +244,7 @@
 <img alt="_images/pycupid_usage_11_0.png" src="_images/pycupid_usage_11_0.png" />
 </div>
 <div class="section" id="fellwalker">
-<h1>FellWalker<a class="headerlink" href="#fellwalker" title="Permalink to this headline">¶</a></h1>
+<h2>FellWalker<a class="headerlink" href="#fellwalker" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">out_fw</span> <span class="o">=</span> <span class="n">fellwalker</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">rms</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -259,7 +260,7 @@
 <img alt="_images/pycupid_usage_15_0.png" src="_images/pycupid_usage_15_0.png" />
 </div>
 <div class="section" id="reinhold">
-<h1>Reinhold<a class="headerlink" href="#reinhold" title="Permalink to this headline">¶</a></h1>
+<h2>Reinhold<a class="headerlink" href="#reinhold" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">out_rh</span> <span class="o">=</span> <span class="n">reinhold</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">rms</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -273,6 +274,7 @@
 </pre></div>
 </div>
 <img alt="_images/pycupid_usage_19_0.png" src="_images/pycupid_usage_19_0.png" />
+</div>
 </div>
 
 
