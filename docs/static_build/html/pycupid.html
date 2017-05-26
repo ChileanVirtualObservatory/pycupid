@@ -177,28 +177,117 @@
 <dl class="function">
 <dt id="pycupid.pycupid.clumpfind">
 <code class="descclassname">pycupid.pycupid.</code><code class="descname">clumpfind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pycupid.pycupid.clumpfind" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="pycupid.pycupid.fellwalker">
-<code class="descclassname">pycupid.pycupid.</code><code class="descname">fellwalker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pycupid.pycupid.fellwalker" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="pycupid.pycupid.gaussclumps">
-<code class="descclassname">pycupid.pycupid.</code><code class="descname">gaussclumps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pycupid.pycupid.gaussclumps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gauss Clump Algorithm</p>
+<dd><p>Clumping Clumping Algorithm</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data: numpy.array</strong></p>
 <blockquote>
-<div><p>Image</p>
+<div><p>Input data with the 2 or 3 dimensional image to analyze.</p>
+</div></blockquote>
+<p><strong>rms: float</strong></p>
+<blockquote>
+<div><p>Estimation of the RMS of noise in data. It is used to configure
+other parameters of the algorithm.</p>
+</div></blockquote>
+<p><strong>config: dict (default=None)</strong></p>
+<blockquote>
+<div><p>Python dictionary containing the parameters of the algorithm:
+config[&#8220;PARAMETER_NAME&#8221;] = PARAMETER_VALUE. If set to None, 
+then default values of the algorithm will be used.</p>
+</div></blockquote>
+<p><strong>variance: float</strong></p>
+<blockquote>
+<div><p>Variance of the data.</p>
+</div></blockquote>
+<p><strong>velax: int</strong></p>
+<blockquote>
+<div><p>Integer value indicate which is the speed/frequency axis in the cube.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">numpy.array</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">numpy.array with integer values (numpy.int32) containing the Clump Assignment Array (CAA).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pycupid.pycupid.fellwalker">
+<code class="descclassname">pycupid.pycupid.</code><code class="descname">fellwalker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pycupid.pycupid.fellwalker" title="Permalink to this definition">¶</a></dt>
+<dd><p>FellWalker Clumping Algorithm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data: numpy.array</strong></p>
+<blockquote>
+<div><p>Input data with the 2 or 3 dimensional image to analyze.</p>
+</div></blockquote>
+<p><strong>rms: float</strong></p>
+<blockquote>
+<div><p>Estimation of the RMS of noise in data. It is used to configure
+other parameters of the algorithm.</p>
+</div></blockquote>
+<p><strong>config: dict (default=None)</strong></p>
+<blockquote>
+<div><p>Python dictionary containing the parameters of the algorithm:
+config[&#8220;PARAMETER_NAME&#8221;] = PARAMETER_VALUE. If set to None, 
+then default values of the algorithm will be used.</p>
+</div></blockquote>
+<p><strong>variance: float</strong></p>
+<blockquote>
+<div><p>Variance of the data.</p>
+</div></blockquote>
+<p><strong>velax: int</strong></p>
+<blockquote>
+<div><p>Integer value indicate which is the speed/frequency axis in the cube.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">numpy.array with integer values (numpy.int32) containing the Clump Assignment Array (CAA).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pycupid.pycupid.gaussclumps">
+<code class="descclassname">pycupid.pycupid.</code><code class="descname">gaussclumps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pycupid.pycupid.gaussclumps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gauss Clumping Algorithm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data: numpy.array</strong></p>
+<blockquote>
+<div><p>Input data with the 2 or 3 dimensional image to analyze.</p>
+</div></blockquote>
+<p><strong>rms: float</strong></p>
+<blockquote>
+<div><p>Estimation of the RMS of noise in data. It is used to configure
+other parameters of the algorithm.</p>
+</div></blockquote>
+<p><strong>config: dict (default=None)</strong></p>
+<blockquote>
+<div><p>Python dictionary containing the parameters of the algorithm:
+config[&#8220;PARAMETER_NAME&#8221;] = PARAMETER_VALUE. If set to None, 
+then default values of the algorithm will be used.</p>
+</div></blockquote>
+<p><strong>variance: float</strong></p>
+<blockquote>
+<div><p>Variance of the data.</p>
+</div></blockquote>
+<p><strong>velax: int</strong></p>
+<blockquote>
+<div><p>Integer value indicate which is the speed/frequency axis in the cube.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">numpy.array with integer values (numpy.int32) containing the Clump Assignment Array (CAA).</p>
 </td>
 </tr>
 </tbody>
@@ -208,7 +297,42 @@
 <dl class="function">
 <dt id="pycupid.pycupid.reinhold">
 <code class="descclassname">pycupid.pycupid.</code><code class="descname">reinhold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pycupid.pycupid.reinhold" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Reinhold Clumping Algorithm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data: numpy.array</strong></p>
+<blockquote>
+<div><p>Input data with the 2 or 3 dimensional image to analyze.</p>
+</div></blockquote>
+<p><strong>rms: float</strong></p>
+<blockquote>
+<div><p>Estimation of the RMS of noise in data. It is used to configure
+other parameters of the algorithm.</p>
+</div></blockquote>
+<p><strong>config: dict (default=None)</strong></p>
+<blockquote>
+<div><p>Python dictionary containing the parameters of the algorithm:
+config[&#8220;PARAMETER_NAME&#8221;] = PARAMETER_VALUE. If set to None, 
+then default values of the algorithm will be used.</p>
+</div></blockquote>
+<p><strong>variance: float</strong></p>
+<blockquote>
+<div><p>Variance of the data.</p>
+</div></blockquote>
+<p><strong>velax: int</strong></p>
+<blockquote>
+<div><p>Integer value indicate which is the speed/frequency axis in the cube.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">numpy.array with integer values (numpy.int32) containing the Clump Assignment Array (CAA).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </div>
 </div>
@@ -267,7 +391,7 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
