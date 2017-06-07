@@ -150,7 +150,7 @@ cdef int[::1] fw(double[::1] data, double[::1] variance,
 
 def gaussclumps(data, rms, config=None, variance=None, velax=0):
     """
-    Gauss Clumping Algorithm
+    `GaussClump Clumping Algorithm <http://starlink.eao.hawaii.edu/docs/sun255.htx/sun255se2.html#x3-70002/>`_
     
     Parameters
     ----------
@@ -181,7 +181,7 @@ def gaussclumps(data, rms, config=None, variance=None, velax=0):
 
 def reinhold(data, rms, config=None, variance=None, velax=0):
     """
-    Reinhold Clumping Algorithm
+    `Reinhold Clumping Algorithm <http://starlink.eao.hawaii.edu/docs/sun255.htx/sun255se2.html#x3-100004>`_
     
     Parameters
     ----------
@@ -212,7 +212,7 @@ def reinhold(data, rms, config=None, variance=None, velax=0):
 
 def clumpfind(data, rms, config=None, variance=None, velax=0, perspectrum=0):
     """
-    Clumping Clumping Algorithm
+    `ClumpFind Clumping Algorithm <http://starlink.eao.hawaii.edu/docs/sun255.htx/sun255se2.html#x3-80003>`_
     
     Parameters
     ----------
@@ -243,7 +243,7 @@ def clumpfind(data, rms, config=None, variance=None, velax=0, perspectrum=0):
 
 def fellwalker(data, rms, config=None, variance=None, velax=0, perspectrum=0):
     """
-    FellWalker Clumping Algorithm
+    `FellWalker Clumping Algorithm  <http://starlink.eao.hawaii.edu/docs/sun255.htx/sun255se2.html#x3-60001>`_
     
     Parameters
     ----------

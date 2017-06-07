@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Cython generated files
+pycupid/pycupid.c
+
 # C extensions
 *.so
 
@@ -99,3 +102,6 @@ pycupid/star/
 _build
 _static
 _templates
+
+# Miscellaneous
+*.sdf
