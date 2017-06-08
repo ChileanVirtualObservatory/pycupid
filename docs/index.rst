@@ -25,6 +25,7 @@ Contents
 
    pycupid
    pycupid_usage
+   parameters
 
 Installation
 ============
