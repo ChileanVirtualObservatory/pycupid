@@ -1,6 +1,7 @@
 import os
 import sys
 import subprocess
+import platform
 try:
     from setuptools import setup
 except ImportError:
@@ -154,12 +155,17 @@ libs = ["libary.*",
 	"libstarmem.*",
 	"libstarutil.*"]
 
+if "Linux" in platform.platform():
+    libs = [l.replace(".*",".so*") for l in libs]
+else:
+    libs = [l.replace(".*","*.dylib*") for l in libs]
+
 libs = [os.path.join("star","lib",lib) for lib in libs ]
 
 
 setup(
     name = 'pycupid',
-    version = '0.1.2',
+    version = '0.1.3',
     author = u'LIRAE TEAM',
     author_email = 'consultas@lirae.cl',
     packages = ['pycupid'],
