@@ -18,6 +18,8 @@ else
 	PLATAFORM = TMP
 endif
 
+all: buildcupid
+
 upload_wheels: build_wheels
 	twine upload dist/* 
 
@@ -25,8 +27,6 @@ build_wheels: clean $(PYTHONS)
 
 $(PYTHONS): %:
 	./build_wheel.sh $@ $(PLATAFORM)
-
-all: buildcupid
 
 .PHONY: buildcupid
 buildcupid: $(starlink_dir)/bin/cupid
