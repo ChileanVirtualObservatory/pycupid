@@ -1,0 +1,24 @@
+languague: python
+notifications:
+  email: false
+
+cache:
+  directories:
+    - starlink
+
+matrix:
+  include:
+    - sudo: required
+      services:
+        - docker
+      env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
+
+install:
+  - sudo docker pull $DOCKER_IMAGE
+
+script:
+  - sudo docker run --rm -v `pwd`:/workspace $DOCKER_IMAGE /workspace/travis/build-wheels.sh
+
+after_success:
+  - pip install twine
+  - (twine upload dist/* -u $USER -p $PASSWORD --skip-existing  || echo "Not last release")
