@@ -10,5 +10,6 @@ if [ "$2" = "TMP" ]; then
 	cd dist
 	head=`ls *-TMP.whl| cut -f1-4 -d"-"`
 	mv *-TMP.whl $head-$after
+	delocate-wheel -v $head-$after
 	cd ..
 fi
