@@ -8,6 +8,7 @@ pycupid/pycupid.c
 
 # C extensions
 *.so
+.zip
 
 # Distribution / packaging
 .Python
