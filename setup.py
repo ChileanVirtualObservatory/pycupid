@@ -86,16 +86,16 @@ extensions = [
     Extension(
         "pycupid.pycupid",
         ext_sources,
-        include_dirs = [os.path.join(WRAPPER_DIR, "star", "include"), 
+        include_dirs = [os.path.join(WRAPPER_DIR, "star", "include"),
                         os.path.join(CUPID_DIR, "include")],
         library_dirs = [os.path.join(WRAPPER_DIR, "star", "lib")],
         extra_link_args = ["-Wl,-rpath," + os.path.join("$ORIGIN", "star", "lib")],
         extra_compile_args = ["-std=c99"],
 	libraries = [
-            "ast", 
-            "err_standalone", 
-            "hds", 
-            "ndf", 
+            "ast",
+            "err_standalone",
+            "hds",
+            "ndf",
             "pda",
             # AST
             "ast_pal",
@@ -165,7 +165,7 @@ libs = [os.path.join("star","lib",lib) for lib in libs ]
 
 setup(
     name = 'pycupid',
-    version = '0.1.3',
+    version = '0.1.4',
     author = u'LIRAE TEAM',
     author_email = 'consultas@lirae.cl',
     packages = ['pycupid'],
