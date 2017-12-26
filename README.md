@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://www.chivo.cl/media/service-images/Pycupid_v3.png" width="200">
+  <img src="https://www.chivo.cl/media/service-images/Pycupid_v3.png" width="300">
 </p>
 
 
