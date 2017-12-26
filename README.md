@@ -1,5 +1,8 @@
 # [**PyCupid**](http://pycupid.readthedocs.io/en/latest/) - Python wrappers for Starlink's CUPID package
 
+
+[[https://www.chivo.cl/media/service-images/Pycupid_v3.png|alt=octocat]]
+
 CUPID is part of the [**Starlink Software Collection**](http://www.starlink.ac.uk/),
 it provides a set of commands that identify and analyse clumps of emission within 1-,
 2- and 3-dimensional data arrays.
