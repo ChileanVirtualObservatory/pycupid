@@ -1,7 +1,7 @@
 # [**PyCupid**](http://pycupid.readthedocs.io/en/latest/) - Python wrappers for Starlink's CUPID package
 
 
-![](https://www.chivo.cl/media/service-images/Pycupid_v3.png =250x)
+<img src="https://www.chivo.cl/media/service-images/Pycupid_v3.png" width="48">
 
 
 CUPID is part of the [**Starlink Software Collection**](http://www.starlink.ac.uk/),
