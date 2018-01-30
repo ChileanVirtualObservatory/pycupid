@@ -165,7 +165,7 @@ libs = [os.path.join("star","lib",lib) for lib in libs ]
 
 setup(
     name = 'pycupid',
-    version = '0.1.4',
+    version = '0.1.5',
     author = u'LIRAE TEAM',
     author_email = 'consultas@lirae.cl',
     packages = ['pycupid'],

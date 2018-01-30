@@ -5,13 +5,10 @@ echo "Looking for py$1 environment"
 
 if [ "$2" = "TMP" ]; then
 	source activate py$1
-	sudo pip install delocate
 	before="TMP.whl"
 	after="macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl"
 	cd dist
 	head=`ls *-TMP.whl| cut -f1-4 -d"-"`
 	mv *-TMP.whl $head-$after
-	delocate-wheel -v $head-$after
-	cd ..
 	source deactivate
 fi

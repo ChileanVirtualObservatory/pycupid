@@ -23,10 +23,13 @@ all: buildcupid
 upload_wheels: build_wheels
 	twine upload dist/* 
 
-build_wheels: clean $(PYTHONS)
+build_wheels: clean $(PYTHONS) auditwheels
 
 $(PYTHONS): %:
 	./build_wheel.sh $@ $(PLATAFORM)
+
+auditwheels: $(PYTHONS)
+	./auditwheels.sh 
 
 .PHONY: buildcupid
 buildcupid: $(starlink_dir)/bin/cupid
