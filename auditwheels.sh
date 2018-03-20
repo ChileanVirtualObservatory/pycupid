@@ -13,7 +13,7 @@ FILES=`ls -1`
 
 for FILE in ${FILES[@]};do
 	if [ "$OS" = "Linux" ]; then
-		auditwheel repair $FILE
+		auditwheel repair  -L star/lib $FILE
 	else
 		delocate -v $FILE
 	fi
