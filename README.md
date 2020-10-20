@@ -25,5 +25,7 @@ To install PyCupid just run:
 ```
 pip install pycupid
 ```
+Wheels for PyCupid are only available for python 2.7, 3.4, 3.5 and 3.6. Installation on newer version (3.7, 3.8) [fails](https://github.com/ChileanVirtualObservatory/pycupid/issues/16#issue-503170953)!  
+Create a virtual environment with an older python version if necessary.
 
 For developers we have a wiki to compile pycupid in [*Manylinux*](https://github.com/ChileanVirtualObservatory/pycupid/wiki)
